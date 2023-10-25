@@ -1,14 +1,7 @@
 /*
- * CPSC 441 Assignment 2
- * Rumaisa Shoeb Talukder, UCID: 30122975
- * L01, T03
- * 
- * Reference:
- * https://www.geeksforgeeks.org/regex_replace-in-cpp-replace-the-match-of-a-string-using-regex_replace/
- * https://d2l.ucalgary.ca/d2l/le/content/542615/Home?itemIdentifier=D2L.LE.Content.ContentObject.ModuleCO-6113278
- * https://d2l.ucalgary.ca/d2l/le/content/542615/viewContent/6101422/View
- * https://cplusplus.com/reference/string/string/npos/
- * 
+ * Environment: WSL (Windows Subsystem for Linux)
+ * Language: C++
+ * Additional: Used for HTTP servers (not HTTPS)
  */
 
 #include <iostream>
@@ -64,8 +57,7 @@ string getWebPageContent(const string& url, const string& path) {
 
     // // DEBUGGING STATEMENTS
     // cout << request << endl;
-    // cout << "Line 66" << endl;
-
+    
     // Send the request
     send(web_socket, request.c_str(), request.length(), 0);
     cout << "HTTP request sent" << endl;
@@ -135,7 +127,6 @@ string getWebPageContent(const string& url, const string& path) {
 
     // DEBUGGING STATEMENTS
     // cout << response << endl;
-    // cout << " line 141" << endl;
 
     // Close the web socket
     close(web_socket);
@@ -154,9 +145,6 @@ int main() {
         perror("Socket creation failed");
         exit(EXIT_FAILURE);
     }
-
-    // DEBUGGING STATEMENT
-    // cout << "Line 80" << endl;
 
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
